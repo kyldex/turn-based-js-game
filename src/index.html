@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Turn-based JS game</title>
+    <meta name="description" content="Turn-based JS game">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,400&display=swap">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="container-game">
+            <div class="game-inner">
+
+                <div id="game-info">
+                    <div class="inner-game-info">
+                        <h1>Turn-based JS Game</h1>
+
+                        <p>
+                            Character 1<br />
+                            Weapon : <span id="character-1-weapon">Punch</span>
+                        </p>
+                        <p>
+                            Character 2<br />
+                            Weapon : <span id="character-2-weapon">Punch</span>
+                        </p>
+
+                        <p class="turn-info-class">Your turn : <span id="turn-info">Player 1</span></p>
+
+                        <p class="game-description">
+                            When it's your turn, click on a reachable cell (the green ones) to move your character. When you get a weapon, the previous one is left. Start the fight by moving next to the other player!<br />
+                            Note : click on the restart button if your character can't move within the grid.
+                        </p>
+
+                        <p class="game-description-weapons">
+                            Weapons damage :<br />
+                            Punch (auto) : 10<br />
+                            Big Punch : 15<br />
+                            Sword : 20<br />
+                            Gun : 25<br />
+                            Bomb : 30
+                        </p>
+
+                        <div class="btn-center">
+                            <button type="button" class="btn-info" onclick="window.location.reload();">Restart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game info for mobile -->
+                <div id="game-info-mobile">
+                    <div class="inner-game-info-mobile">
+                        <h1>Turn-based JS Game</h1>
+
+                        <p class="game-description">
+                            When it's your turn, click on a reachable cell (the green ones) to move your character. When you get a weapon, the previous one is left. Start the fight by moving next to the other player!<br />
+                            Note : click on the restart button if your character can't move within the grid.
+                        </p>
+
+                        <p class="game-description-weapons">
+                            Weapons damage :<br />
+                            Punch (auto) : 10<br />
+                            Big Punch : 15<br />
+                            Sword : 20<br />
+                            Gun : 25<br />
+                            Bomb : 30
+                        </p>
+
+                        <div class="char-info-mobile">
+                            <p>
+                                Character 1<br />
+                                Weapon : <span id="character-1-weapon-mobile">Punch</span>
+                            </p>
+                            <p>
+                                Character 2<br />
+                                Weapon : <span id="character-2-weapon-mobile">Punch</span>
+                            </p>
+                        </div>
+
+                        <p class="turn-info-class">Your turn : <span id="turn-info-mobile">Player 1</span></p>
+                    </div>
+                </div>
+
+                <!-- Game grid -->
+                <div class="grid">
+                    <div id="grid-inner"></div>
+                </div>
+
+                <div class="btn-center-mobile">
+                    <button type="button" class="btn-info" onclick="window.location.reload();">Restart</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="fight" class="hidden">
+            <div class="inner-fight">
+                <div class="inner-fight-info">
+                    <div class="fight-title">
+                        <h2>Fight !</h2>
+                        <img src="assets/img/explosion.svg" alt="explosion illustration">
+                    </div>
+
+                    <div class="desktop-keys">
+                        <p>Press A to attack</p>
+                        <p>Press D to defend<br /><span class="defend-info">(-50% damage for next turn)</span></p>
+                    </div>
+
+                    <div class="char-fight-info">
+                        <div class="char-fight-inner-info">
+                            <h3>Character 1</h3>
+
+                            <div class="life-bar">
+                                <div id="char-1-life-bar"></div>
+                            </div>
+
+                            <p>
+                                Health : <span id="char-1-health">100</span><br />
+                                Weapon : <span id="char-1-weapon-fight">Punch</span>
+                            </p>
+                        </div>
+
+                        <div class="char-fight-inner-info">
+                            <h3>Character 2</h3>
+
+                            <div class="life-bar">
+                                <div id="char-2-life-bar"></div>
+                            </div>
+
+                            <p>
+                                Health : <span id="char-2-health">100</span><br />
+                                Weapon : <span id="char-2-weapon-fight">Punch</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mobile-controls">
+                        <button type="button" class="btn-fight btn-fight-attack">Attack</button>
+                        <button type="button" class="btn-fight btn-fight-defend">Defend</button>
+                        <p class="defend-info-mobile">(-50% damage for next turn)</p>
+                    </div>
+
+                    <p class="turn-info-fight-class">Your turn : <span id="turn-info-fight">Player 1</span></p>
+                    <p id="winner-name" class="hidden"></p>
+
+                    <div id="winner-illustration-1" class="hidden">
+                        <div class="winner-illustration-inner">
+                            <img src="assets/img/character-1.svg" alt="character 1 illustration">
+                            <img src="assets/img/bang.svg" alt="bang illustration">
+                        </div>
+                    </div>
+                    <div id="winner-illustration-2" class="hidden">
+                        <div class="winner-illustration-inner">
+                            <img src="assets/img/character-2.svg" alt="character 2 illustration">
+                            <img src="assets/img/bang.svg" alt="bang illustration">
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-fight btn-fight-restart" onclick="window.location.reload();">Restart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SVG illustrations credits -->
+        <footer>
+            Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </footer>
+    </div>
+</body>
+
+</html>
