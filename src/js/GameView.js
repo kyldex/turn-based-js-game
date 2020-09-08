@@ -14,13 +14,13 @@ export default class GameView {
     */
     init(grid) {
 
-        for (let i = 0; i < grid.numberOfCellsY; i++) {
+        for (let i = 0; i < this.numberOfCellsY; i++) {
 
             let newRowElement = document.createElement('div');
             newRowElement.classList.add('row');
             document.getElementById('grid-inner').appendChild(newRowElement);
         
-            for (let j = 0; j < grid.numberOfCellsX; j++) {
+            for (let j = 0; j < this.numberOfCellsX; j++) {
         
                 let newCellElement = document.createElement('div');
                 newCellElement.id = grid.cells[i][j].id;
