@@ -173,8 +173,12 @@ export default class GameView {
     // Called from fight() event callback - desktop
     fightDesktopAction(e, callback, controller, that, characterNumber, nextCharacterNumber) {
 
+        // Verify if KeyboardEvent.keyCode is not supported anymore
+        const key = e.key;
+        const keyCode = e.keyCode;
+
         // If A key is pressed, attack mode
-        if (e.keyCode === 65) {
+        if (key && e.key === 'a' || key && e.key === 'A' || keyCode && e.keyCode === 65) {
             
             const nextCharacterNewHealth = controller
             .getCharacter(characterNumber)
@@ -214,7 +218,7 @@ export default class GameView {
             }
 
         // If D key is pressed, defense mode
-        } else if (e.keyCode === 68) {
+        } else if (key && e.key === 'd' || key && e.key === 'D' || keyCode && e.keyCode === 68) {
 
             controller.getCharacter(characterNumber).defense = true;
 
