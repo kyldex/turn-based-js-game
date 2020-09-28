@@ -1,6 +1,6 @@
 # Turn-based JS Game
 
-Turn-based web game using MVC and vanilla Javascript. Try it directly with this link : https://turn-based-js-game.rg-dev.fr/
+Turn-based web game using MVC and Vanilla Javascript. Try it directly with this link : https://turn-based-js-game.rg-dev.fr/
 
 ## Game description
 
