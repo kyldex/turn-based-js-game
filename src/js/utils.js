@@ -14,7 +14,7 @@ function getRandomBoolean() {
 }
 
 /**
- * Converts ids strings into x,y coordinates with array deconstructing
+ * Converts ids strings into x,y coordinates with array destructuring
  * @param {string}
  * @returns {Object} 
  */
